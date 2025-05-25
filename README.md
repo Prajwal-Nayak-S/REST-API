@@ -315,6 +315,7 @@ management.endpoints.web.exposure.include=*
 spring.security.user.name=username
 spring.security.user.password=password
 ```
+<h1 align="center">If we want to get the data from the rest-api or we want to post any data using rest-api then we need to give the right credentials and login  </h1>
 
 ![security1](https://github.com/user-attachments/assets/757827d9-cbbd-4444-b248-9a44d93bd7bf)
 
