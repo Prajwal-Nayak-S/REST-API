@@ -147,3 +147,175 @@ Response Header => Location: http://localhost:8080/users/4
     "details": "uri=/users/1000"
 }
 ```
+
+- Exploring Content Negotiation - Implementing Support for XML
+
+
+### XML Representation of Resources
+
+#### GET http://localhost:8080/users
+
+- Accept application/xml
+
+```xml
+<List>
+    <item>
+        <id>1</id>
+        <name>Adam</name>
+        <birthDate>1992-08-19</birthDate>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Eve</name>
+        <birthDate>1997-08-19</birthDate>
+    </item>
+    <item>
+        <id>3</id>
+        <name>Jim</name>
+        <birthDate>2002-08-19</birthDate>
+    </item>
+</List>
+```
+
+#### POST http://localhost:8080/users
+- Accept : application/xml
+- Content-Type : application/xml
+
+##### Request
+
+```xml
+<item>
+        <name>Prajwal</name>
+        <birthDate>2000-07-19</birthDate>
+</item>
+```
+
+##### Response
+- Status - 201 Created
+
+### /pom.xml Modified
+
+```
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+```
+
+- Exploring Internationalization for REST API
+
+### Request
+`GET` to `http://localhost:8080/hello-world-internationalized`
+with a Header
+`Accept-Language: nl`
+
+### Response
+`Goedemorgen`
+
+
+ - Implementing HATEOAS for REST API
+### GET http://localhost:8080/users/1 with HATEOAS
+```json
+{
+    "name": "Adam",
+    "birthDate": "1992-08-19",
+    "_links": {
+        "all-users": {
+            "href": "http://localhost:8080/users"
+        }
+    }
+}
+```
+
+### /pom.xml Modified
+
+```
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
+```
+
+
+- Implementing Static Filtering for REST API
+ - Implementing Dynamic Filtering for REST API
+
+URLs
+- http://localhost:8080/filtering
+- http://localhost:8080/filtering-list
+
+```
+{
+  "field1": "value1",
+  "field3": "value3"
+}
+```
+
+```
+[
+  {
+    "field2": "value2",
+    "field3": "value3"
+  },
+  {
+    "field2": "value5",
+    "field3": "value6"
+  }
+]
+```
+
+
+ Monitoring APIs with Spring Boot Actuator
+ Exploring APIs with Spring Boot HAL Explorer
+
+URLs
+- Actuator
+	- http://localhost:8080/actuator
+- HAL Browser
+	- http://localhost:8080
+
+### /pom.xml Modified
+
+```
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
+		</dependency>
+
+```
+
+### /src/main/resources/application.properties Modified
+
+```
+management.endpoints.web.exposure.include=*
+```
+
+
+ Implementing Basic Authentication with Spring Security
+ Enhancing Spring Security Configuration for Basic Authentication
+
+### /pom.xml Modified
+
+```
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+```
+
+### /src/main/resources/application.properties Modified
+
+```
+spring.security.user.name=username
+spring.security.user.password=password
+```
+
+![security1](https://github.com/user-attachments/assets/757827d9-cbbd-4444-b248-9a44d93bd7bf)
+
+![Screenshot 2025-05-25 200115](https://github.com/user-attachments/assets/0320d49b-5a6b-41e0-a530-e3b8443b0218)
