@@ -4,9 +4,10 @@
 - Basic Resources
   - http://localhost:8080/hello-world
   - http://localhost:8080/hello-world-bean
-  - http://localhost:8080/hello-world/path-variable/Ranga
+  - http://localhost:8080/hello-world/path-variable/Prajwal
   - http://localhost:8080/users
   - http://localhost:8080/users/1
+
 - JPA Resources
   - http://localhost:8080/jpa/users
   - http://localhost:8080/jpa/users/1
@@ -34,8 +35,10 @@
 - Swagger
   - http://localhost:8080/swagger-ui.html
   - http://localhost:8080/v3/api-docs
-- H2-Console
-  - http://localhost:8080/h2-console
+    
 - HAL Browser
-	- http://localhost:8080
+   - http://localhost:8080
+
+ - Internationalization
+   - http://localhost:8080/hello-world-internationalized
 
