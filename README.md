@@ -321,5 +321,7 @@ spring.security.user.password=password
 
 ![Screenshot 2025-05-25 200115](https://github.com/user-attachments/assets/0320d49b-5a6b-41e0-a530-e3b8443b0218)
 
-<h1 align="center">Data Stored in data base </h1>
+ <h1 align="center">Data Stored in data base </h1>
+  <img src="https://github.com/user-attachments/assets/ac0af41c-1c6a-4c00-b0db-cc6459866bfe" width="1000" height="500"></p>
+
 
